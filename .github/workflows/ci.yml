@@ -1,0 +1,25 @@
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+
+name: Tests
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - uses: cachix/install-nix-action@v13
+      - uses: cachix/cachix-action@v10
+        with:
+          name: dapp
+
+      - name: Run integration tests
+        run: nix-shell --run './test.sh lootloose'
+        # Enable this if using forking tests
+        # env:
+        #  ETH_RPC_URL: https://eth-mainnet.alchemyapi.io/v2/${{ secrets.ALCHEMY_API_KEY }}
