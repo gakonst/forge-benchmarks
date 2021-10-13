@@ -1,0 +1,3 @@
+[submodule "testdata/lootloose"]
+	path = testdata/lootloose
+	url = https://github.com/gakonst/lootloose/
