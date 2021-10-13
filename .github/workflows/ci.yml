@@ -18,6 +18,9 @@ jobs:
         with:
           name: dapp
 
+      - name: Build deps
+        run: nix-shell --run './build.sh lootloose'
+
       - name: Run integration tests
         run: nix-shell --run './test.sh lootloose'
         # Enable this if using forking tests
