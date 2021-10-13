@@ -15,16 +15,24 @@ jobs:
         with:
           submodules: recursive
       - uses: actions/setup-node@v2
-      - uses: cachix/install-nix-action@v13
-      - uses: cachix/cachix-action@v10
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
         with:
-          name: dapp
+          profile: minimal
+          toolchain: stable
+          override: true
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v1
+        with:
+          cache-on-failure: true
+      - name: Install turbodapp
+        run: cargo install --git https://github.com/gakonst/dapptools-rs
 
       - name: Build deps
-        run: nix-shell --run './build.sh lootloose'
+        run: ./build.sh lootloose
 
       - name: Run integration tests
-        run: nix-shell --run './test.sh lootloose'
+        run: ./test.sh lootloose
         # Enable this if using forking tests
         # env:
         #  ETH_RPC_URL: https://eth-mainnet.alchemyapi.io/v2/${{ secrets.ALCHEMY_API_KEY }}

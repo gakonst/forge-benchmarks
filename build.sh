@@ -8,7 +8,10 @@ DIR=`pwd`
 
 function buildRepo() {
     cd $TESTDATA/$1
-    make install
+    # install npm deps if any
+    make npm || true
+    # patch deps if any
+    make patch || true
     cd -
 }
 
