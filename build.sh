@@ -8,7 +8,7 @@ DIR=`pwd`
 
 function buildRepo() {
     cd $TESTDATA/$1
-    make
+    make install
     cd -
 }
 
