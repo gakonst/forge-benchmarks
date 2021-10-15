@@ -1,3 +1,6 @@
 [submodule "testdata/lootloose"]
 	path = testdata/lootloose
 	url = https://github.com/gakonst/lootloose/
+[submodule "testdata/vaults"]
+	path = testdata/vaults
+	url = https://github.com/Rari-Capital/vaults
