@@ -18,6 +18,7 @@ function runTests() {
     # run any installation step if needed
     make install || true
 
+    # update the deps
     dapp update
     # always have the ffi flag turned on
     # dapp test --ffi
