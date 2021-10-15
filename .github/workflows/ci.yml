@@ -26,7 +26,7 @@ jobs:
         with:
           cache-on-failure: true
       - name: Install turbodapp
-        run: cargo install --git https://github.com/gakonst/dapptools-rs
+        run: cargo install --git https://github.com/gakonst/dapptools-rs --locked
 
       - name: Build deps
         run: ./build.sh lootloose
