@@ -4,3 +4,6 @@
 [submodule "testdata/vaults"]
 	path = testdata/vaults
 	url = https://github.com/Rari-Capital/vaults
+[submodule "testdata/solmate"]
+	path = testdata/solmate
+	url = https://github.com/Rari-Capital/solmate
