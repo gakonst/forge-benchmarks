@@ -13,3 +13,6 @@
 [submodule "testdata/solidity-stringutils"]
 	path = testdata/solidity-stringutils
 	url = https://github.com/Arachnid/solidity-stringutils
+[submodule "testdata/multicall"]
+	path = testdata/multicall
+	url = https://github.com/makerdao/multicall
