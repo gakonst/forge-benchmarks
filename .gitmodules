@@ -7,3 +7,6 @@
 [submodule "testdata/solmate"]
 	path = testdata/solmate
 	url = https://github.com/Rari-Capital/solmate
+[submodule "testdata/geb"]
+	path = testdata/geb
+	url = https://github.com/reflexer-labs/geb
