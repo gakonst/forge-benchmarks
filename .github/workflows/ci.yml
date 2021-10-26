@@ -7,12 +7,15 @@ on:
 name: e2e tests
 
 jobs:
-  # TODO: Deduplicate turbodapp installation step
+  # TODO: Deduplicate turbodapp installation step?
   tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         repo: ["lootloose", "solmate", "vaults", "geb"]
+
+    env:
+      TURBODAPP_REVISION: 0e156076f6453dfaa0af0be8668906cf7f324ac9
 
     steps:
       - uses: actions/checkout@v2
@@ -29,8 +32,21 @@ jobs:
       - uses: Swatinem/rust-cache@v1
         with:
           cache-on-failure: true
+
+      # try to get turbodapp from cache
+      - name: Cache turbodapp
+        id: cache-turbodapp
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-turbodapp
+        with:
+          path: ~/.cargo/bin/dapp
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.TURBODAPP_REVISION }}
+
+      # if couldn't get, install turbodapp
       - name: Install turbodapp
-        run: cargo install --git https://github.com/gakonst/dapptools-rs --rev 0e156076f6453dfaa0af0be8668906cf7f324ac9 --locked
+        if: steps.cache-turbodapp.outputs.cache-hit != 'true'
+        run: cargo install --git https://github.com/gakonst/dapptools-rs --rev ${{ env.TURBODAPP_REVISION }} --locked
 
       - name: Test ${{ matrix.repo }}
         run: ./test.sh ${{ matrix.repo }}
