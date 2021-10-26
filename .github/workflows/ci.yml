@@ -1,6 +1,6 @@
 on:
   push:
-    branches: 
+    branches:
       - master
   pull_request:
 
@@ -31,8 +31,11 @@ jobs:
       - name: Build deps
         run: ./build.sh lootloose
 
-      - name: Run integration tests
-        run: ./test.sh lootloose
-        # Enable this if using forking tests
-        # env:
-        #  ETH_RPC_URL: https://eth-mainnet.alchemyapi.io/v2/${{ secrets.ALCHEMY_API_KEY }}
+      - name: solmate
+        run: ./test.sh solmate
+
+      - name: vaults
+        run: ./test.sh vaults
+
+      - name: geb
+        run: ./test.sh geb
