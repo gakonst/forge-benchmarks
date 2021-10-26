@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo: ["lootloose", "solmate", "vaults", "geb"]
+        repo: ["lootloose", "solmate", "vaults", "geb", "solidity-stringutils"]
 
     env:
       TURBODAPP_REVISION: 0e156076f6453dfaa0af0be8668906cf7f324ac9

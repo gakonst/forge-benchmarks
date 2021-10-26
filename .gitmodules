@@ -10,3 +10,6 @@
 [submodule "testdata/geb"]
 	path = testdata/geb
 	url = https://github.com/reflexer-labs/geb
+[submodule "testdata/solidity-stringutils"]
+	path = testdata/solidity-stringutils
+	url = https://github.com/Arachnid/solidity-stringutils
