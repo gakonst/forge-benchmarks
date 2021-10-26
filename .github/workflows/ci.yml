@@ -4,11 +4,15 @@ on:
       - master
   pull_request:
 
-name: Tests
+name: e2e tests
 
 jobs:
+  # TODO: Deduplicate turbodapp installation step
   tests:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo: ["lootloose", "solmate", "vaults", "geb"]
 
     steps:
       - uses: actions/checkout@v2
@@ -26,16 +30,7 @@ jobs:
         with:
           cache-on-failure: true
       - name: Install turbodapp
-        run: cargo install --git https://github.com/gakonst/dapptools-rs --locked
+        run: cargo install --git https://github.com/gakonst/dapptools-rs --rev 0e156076f6453dfaa0af0be8668906cf7f324ac9 --locked
 
-      - name: Build deps
-        run: ./build.sh lootloose
-
-      - name: solmate
-        run: ./test.sh solmate
-
-      - name: vaults
-        run: ./test.sh vaults
-
-      - name: geb
-        run: ./test.sh geb
+      - name: Test ${{ matrix.repo }}
+        run: ./test.sh ${{ matrix.repo }}
