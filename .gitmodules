@@ -16,3 +16,9 @@
 [submodule "testdata/multicall"]
 	path = testdata/multicall
 	url = https://github.com/makerdao/multicall
+[submodule "testdata/solidity-trigonometry"]
+	path = testdata/solidity-trigonometry
+	url = https://github.com/mds1/solidity-trigonometry
+[submodule "testdata/drai"]
+	path = testdata/drai
+	url = https://github.com/mds1/drai
