@@ -17,7 +17,7 @@ it'll iterate over all repos under `testdata` and run all tests
 
 ## Repositories Included
 
-* LootLoose
+See submodules linked the [`testdata/` folder](https://github.com/gakonst/dapptools-benchmarks/tree/master/testdata).
 
 ## Adding a new repository
 
