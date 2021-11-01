@@ -17,7 +17,7 @@ it'll iterate over all repos under `testdata` and run all tests
 
 ## Repositories Included
 
-See submodules linked the [`testdata/` folder](https://github.com/gakonst/dapptools-benchmarks/tree/master/testdata).
+See submodules linked the [`testdata/`](https://github.com/gakonst/dapptools-benchmarks/tree/master/testdata) folder.
 
 ## Adding a new repository
 
