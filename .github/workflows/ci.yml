@@ -7,15 +7,15 @@ on:
 name: e2e tests
 
 jobs:
-  # TODO: Deduplicate turbodapp installation step?
   tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo: ["lootloose", "solmate", "vaults", "geb", "solidity-stringutils", "multicall"]
+        repo: ["lootloose", "solmate", "vaults", "geb", "solidity-stringutils", "multicall", "guni-lev"]
 
     env:
-      TURBODAPP_REVISION: 0e156076f6453dfaa0af0be8668906cf7f324ac9
+      TURBODAPP_REVISION: 3184f05a6d067e20c86de8813bedfed3cd2036bb
+      ETH_RPC_URL: https://mainnet.infura.io/v3/c60b0bb42f8a4c6481ecd229eddaca27
 
     steps:
       - uses: actions/checkout@v2

@@ -16,3 +16,6 @@
 [submodule "testdata/multicall"]
 	path = testdata/multicall
 	url = https://github.com/makerdao/multicall
+[submodule "testdata/guni-lev"]
+	path = testdata/guni-lev
+	url = https://github.com/hexonaut/guni-lev
