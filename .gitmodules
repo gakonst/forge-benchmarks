@@ -19,3 +19,6 @@
 [submodule "testdata/guni-lev"]
 	path = testdata/guni-lev
 	url = https://github.com/hexonaut/guni-lev
+[submodule "testdata/drai"]
+	path = testdata/drai
+	url = https://github.com/mds1/drai
