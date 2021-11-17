@@ -6,7 +6,7 @@ This repository is used for integration testing [turbodapp](https://github.com/g
 common dapptools repositories, to ensure that it's compatible with the test cases in them,
 e.g. usage of HEVM cheatcodes, proper forking mode integration, fuzzing etc.
 
-This repository is also used as a testbed for comparing performance between  and [dapptools](https://github.com/dapphub/dapptools/).
+This repository is also used as a testbed for comparing performance between [turbodapp](https://github.com/gakonst/dapptools-rs/) and [dapptools](https://github.com/dapphub/dapptools/).
 
 ## How to run?
 
