@@ -22,3 +22,6 @@
 [submodule "testdata/drai"]
 	path = testdata/drai
 	url = https://github.com/mds1/drai
+[submodule "testdata/coop-tax-contracts"]
+	path = testdata/coop-tax-contracts
+	url = https://github.com/IndexCoop/coop-tax-contracts
