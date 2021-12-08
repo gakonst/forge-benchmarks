@@ -2,15 +2,15 @@
 
 ## Motivation
 
-This repository is used for integration testing [turbodapp](https://github.com/gakonst/dapptools-rs/) with
+This repository is used for integration testing [forge](https://github.com/gakonst/foundry/) with
 common dapptools repositories, to ensure that it's compatible with the test cases in them,
 e.g. usage of HEVM cheatcodes, proper forking mode integration, fuzzing etc.
 
-This repository is also used as a testbed for comparing performance between [turbodapp](https://github.com/gakonst/dapptools-rs/) and [dapptools](https://github.com/dapphub/dapptools/).
+This repository is also used as a testbed for comparing performance between [forge](https://github.com/gakonst/foundry/) and [dapptools](https://github.com/dapphub/dapptools/).
 
 ## How to run?
 
-1. Make sure turbodapp & dapptools are installed
+1. Make sure forge & dapptools are installed
 1. Make sure dapptools is installed
 1. Run `./test.sh $REPO_NAME`, e.g. `./test.sh LootLoose`. If no argument is provided,
 it'll iterate over all repos under `testdata` and run all tests
